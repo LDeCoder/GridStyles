@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- we will use the fluid 12 column grid structure
+We need to first look at the context of our page with a block level element. The block element will be our main container at 100% wide.
+ -->
+        <div class="grid">
+                <!-- 100% wide -->
+             </div>
+
+            <!-- To begin, we will start with practical elements: a content area with a sidebar. The sidebar being 1/3 the width and the content area being 2/3 the width of the page. -->
+             <div class="grid">
+                <div class="col-2-3">
+                    Main Content
+                </div>
+                <div class="col-1-3">
+                    Sidebar
+                </div>
+             </div>
+
+MODULAR:
+Separating your content in a modular format helps to give more semantic meaning to your HTML.
+             <div class="grid">
+                    <div class="col-2-3">
+                        <article class="module">
+                            Content
+                        </article>
+                        <article class="module">
+                            Content
+                        </article>
+                    </div>
+                    <div class="col-1-3">
+                        <aside class="module">
+                            Sidebar
+                        </aside>
+                    </div>
+                 </div>
+
+    
+</body>
+</html>
+
+
+
