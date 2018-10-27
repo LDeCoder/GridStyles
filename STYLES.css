@@ -3,6 +3,11 @@ with a block level element. The block element will
 be our main container at 100% wide.
  */
 
+/* DONT FORGET TO LINK THE FILE!    
+
+syntax:  <link rel = "stylesheet" href="index.css">
+ */
+
  .grid {
     width: auto;
  }
@@ -62,3 +67,48 @@ be our main container at 100% wide.
     width: 12.5%;
  }
  */
+
+
+ /* found on profoundgrid.com */
+ REFERENCE
+/* Total Width */
+$total_width: 960px; // px or %
+Defines the overall width of the grid. If set to 100% the grid becomes fluid.
+Total Columns
+$total_columns: 12; // number
+Defines the amount of columns in your grid.
+Gutter Width
+$gutter_width: 1%;  // px or %
+Sets the grid's gutter width. This can be % or px and will automatically determine the width of each column.
+Container Margin
+$container_margin: 1%;  // px or %
+Determines the margin on the left and right side of the grid. Example: If this is set to 0 for a 100% fluid grid, the grid will touch the sides of the browser.
+Helper Classes
+$class_container: 'grid';
+$class_column: 'col';
+$class_push: 'push';
+Allows you to change the name of the helper classes, that you can use to build your grid through markup.
+Mixin: Helper Classes
+//helper_classes()
+@include helper_classes();
+Builds helper classes that can used to build the grid in the markup. Default classnames are: .container, .col1 - .colx, .push0 - .pushx
+Mixin: Container
+//container()
+.grid{ @include container(); }
+Establish the outer grid-containing element.
+Mixin: Column
+//column($width, $padding:null)
+.col{ @include column(3); }
+Creates a column of the specified width. The optional argument sets the columns position.
+Mixin: Push
+//push($_column_index)
+.col{ @include push(1); }
+Sets the position of a "column()" element. The argument is a 0-based index, so the above example would align the element the 2nd colum of the grid.
+Mixin: Positions
+//positions($selector, $width)
+@include positions('.grid', 3);
+Creates CSS Styles to automatically position every element in a grid of equal sized elements.
+Mixin: Positions Legacy
+//pos_legacy($s, $w, $count)
+@include pos_legacy('.grd', 3, 12);
+Same as the "positions()" mixin, with an additional parameter for the total amount of columns/elements supported. The difference lies in the CSS output, that avoids the use of the nth-child() selector which isn't natively supported in older browsers.
